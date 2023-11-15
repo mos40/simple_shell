@@ -20,7 +20,7 @@ int isInteractive(info_t *info)
 int is_Delim(char c, char *delim)
 {
 	while (*delim)
-		if (*delim++ == c)
+		if (*delim++ == c /* code by Moses*/)
 			return (1);
 	return (0);
 }

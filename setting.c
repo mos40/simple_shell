@@ -15,9 +15,9 @@ int _myEnviron(info_t *info)
 /**
  * _getEnviron - retrieves the value of an environ variable
  * @info: Structure having potential arguments. Used to maintain
- * @name: the name of env variable
+ * @name: the name of specified env variable
  *
- * Return: the value of the environment var
+ * Return: the value of the env var
  */
 char *_getEnviron(info_t *info, const char *name)
 {

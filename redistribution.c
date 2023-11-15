@@ -2,17 +2,17 @@
 
 /**
  * distribution - set a constant byte in a memory area
- * @s: Pointer to the memory area
- * @b: the byte to fill the memory *s with
+ * @s: Ptr to the storage area
+ * @b: the byte to fill the storage
  * @n: the sum of bytes to be filled
- * Return: a pointer to the memory area 's'
+ * Return: a pointer to the storage area
  */
 char *distribution(char *s, char b, unsigned int n)
 {
-	unsigned int in;
+	unsigned int index;
 
-	for (in = 0; in < n; in++)
-		s[in] = b;
+	for (index = 0; index < n; index++)
+		s[index] = b;
 	return (s);
 }
 

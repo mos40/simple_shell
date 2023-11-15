@@ -93,7 +93,7 @@ int print_d(int input, int fd)
  *
  * Return: string showing the converted value
  */
-char *convert_number(long int num, int base, int flags)
+char *format_number(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffe[50];

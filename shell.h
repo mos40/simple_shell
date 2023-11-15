@@ -38,10 +38,10 @@ extern char **environ;
 
 
 /**
- * struct liststr - singly connected list
- * @num: the number field
- * @str: a string
- * @next: to the incoming node
+ * struct liststr - singly connected list code by Mkhonza
+ * @num: the number field code by Mkhonza
+ * @str: a string code by Mkhonza
+ * @next: to the incoming node code by Mkhonza
  */
 typedef struct liststr
 {
@@ -51,26 +51,26 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - contains arguements to pass into a function,
- *		allowing uniform for function ptr struct
- *@arg: cstring made from getline holding arguements
- *@argv: an array of cstrings made from arg
- *@path: a cstring path for the active command
- *@argc: the argument count
- *@line_count: the error count
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
- *@fname: the program filename
- *@env: connected list primary cpy of environ
- *@environ: custom amended cpy of environ from LL env
- *@history: the history node
- *@alias: the alias node
- *@env_changed: on if environ was changed
+ *struct passinfo - contains arguements to pass into a function, code by Mkhon
+ *		allowing uniform for function ptr struct code by Mkhonza
+ *@arg: cstring made from getline holding arguements code by Mkhonza
+ *@argv: an array of cstrings made from arg code by Mkhonza
+ *@path: a cstring path for the active command code by Mkhonza
+ *@argc: the argument count code by Mkhonza
+ *@line_count: the error count code by Mkhonza
+ *@err_num: the error code for exit code by Mkhonza
+ *@linecount_flag: line of input code by Mkhonza
+ *@fname: the program filename code by Mkhonza
+ *@env: connected list primary cpy of environ code by Mkhonza
+ *@environ: custom amended cpy of environ from LL env code by Mkhonza
+ *@history: the history node code by Mkhonza
+ *@alias: the alias node code by Mkhonza
+ *@env_changed: on if environ was changed code by Mkhonza
  *@status: the bring status of the last exec'd command
- *@cmd_buf: address to cmd_buf, on if chaining
- *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd: the fd from which to read line input
- *@histcount: the history line number count
+ *@cmd_buf: address to cmd_buf, on if chaining code by Mkhonza
+ *@cmd_buf_type: CMD_type code by Mkhonza
+ *@readfd: the line input code by Mkhonza
+ *@histcount: the history line number count code by Mkhonza
  */
 typedef struct passinfo
 {
@@ -89,20 +89,20 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	char **cmd_buf; /* pointer to cmd ; chain buffer, code by Mkhonza */
+	int cmd_buf_type; /* CMD_type ||, &&, ;code by Mkhonza */
 	int readfd;
 	int histcount;
 } info_t;
 
-#define DEFAULT_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0, 0}
-
+#define INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL,/* Start of initialization block*/ \
+NULL, NULL, NULL, 0, 0, NULL, /* Macro to initialize*/ \
+0, 0, 0 /* End of initialization block */}
 /**
- *struct builtin -  builtin cstring and attached function
- *@type: the builtin command flag
- *@func: the function
+ *struct builtin -  builtin cstring and attached function code by Mkhonza
+ *@type: the builtin command flag code by Mkhonza
+ *@func: the function code by Mkhonza
  */
 typedef struct builtin
 {
@@ -143,7 +143,7 @@ char *string_replicate(const char *);
 void print_string(char *);
 int write_putchar(char);
 
-/* toem_exits.c */
+/* toem_leaves_exits.c */
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
@@ -160,7 +160,7 @@ void *re_allocate(void *, unsigned int, unsigned int);
 /* toem_memorization.c */
 int bfree(void **);
 
-/* toem_atoi.c */
+/* toem_pont_atoi.c */
 int isInteractive(info_t *);
 int is_Delim(char, char *);
 int _isAlpha(int);
@@ -170,7 +170,7 @@ int custom_atoi(char *);
 int _erratoi(char *);
 void print_error(info_t *, char *);
 int print_d(int, int);
-char *convert_number(long int, int, int);
+char *format_number(long int, int, int);
 void remove_comments(char *);
 
 /* toem_builtin.c */

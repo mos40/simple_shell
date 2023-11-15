@@ -5,11 +5,11 @@
  * @ac: Arg_count
  * @av: Arg_vector
  *
- * Return: 0 on success, 1 on error
+ * Return: 0 accomplishment, 1 on miscalculation
  */
 int main(int ac, char **av)
 {
-	info_t data[] = {DEFAULT_INIT};
+	info_t data[] = { INFO_INIT };
 	int filed = 2;
 
 	asm ("mov %1, %0\n\t"

@@ -117,13 +117,13 @@ int restore_vars(info_t *info)
 		if (!_str_Cmp(info->argv[in], "$?"))
 		{
 			restore_string(&(info->argv[in]),
-				string_replicate(convert_number(info->status, 10, 0)));
+				string_replicate(format_number(info->status, 10, 0)));
 			continue;
 		}
 		if (!_str_Cmp(info->argv[in], "$$"))
 		{
 			restore_string(&(info->argv[in]),
-				string_replicate(convert_number(getpid(), 10, 0)));
+				string_replicate(format_number(getpid(), 10, 0)));
 			continue;
 		}
 		nodule = node_starts_with(info->env, &info->argv[in][1], '=');

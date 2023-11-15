@@ -9,19 +9,20 @@
 
 char *get_hist_file(info_t *info)
 {
-	char *buffe, *home_dir;
+	char *arry, *home_dir;
 
 	home_dir = _getEnviron(info, "HOME=");
 	if (!home_dir)
 		return (NULL);
-	buffe = malloc(sizeof(char) * (str_size(home_dir) + str_size(HIST_FILE) + 2));
-	if (!buffe)
+	arry = malloc(sizeof(char) * (str_size /*memory alloc fails, return NULL */
+	(home_dir) + str_size(HIST_FILE) + 2));
+	if (!arry)
 		return (NULL);
-	buffe[0] = 0;
-	string_copy(buffe, home_dir);
-	_str_Cat(buffe, "/");
-	_str_Cat(buffe, HIST_FILE);
-	return (buffe);
+	arry[0] = 0;
+	string_copy(arry, home_dir);
+	_str_Cat(arry, "/");
+	_str_Cat(arry, HIST_FILE);
+	return (arry);
 }
 
 /**
@@ -64,7 +65,7 @@ int read_hist(info_t *info)
 	int in, las = 0, lineCount = 0;
 	ssize_t filed, rdlen, f_size = 0;
 	struct stat st;
-	char *buffe = NULL, *fileName = get_hist_file(info);
+	char *arry = NULL, *fileName = get_hist_file(info);
 
 	if (!fileName)
 		return (0);
@@ -77,24 +78,24 @@ int read_hist(info_t *info)
 		f_size = st.st_size;
 	if (f_size < 2)
 		return (0);
-	buffe = malloc(sizeof(char) * (f_size + 1));
-	if (!buffe)
+	arry = malloc(sizeof(char) * (f_size + 1));/* Allocate memory for the array */
+	if (!arry)
 		return (0);
-	rdlen = read(filed, buffe, f_size);
-	buffe[f_size] = 0;
+	rdlen = read(filed, arry, f_size);
+	arry[f_size] = 0;
 	if (rdlen <= 0)
-		return (free(buffe), 0);
+		return (free(arry), 0);
 	close(filed);
 	for (in = 0; in < f_size; in++)
-		if (buffe[in] == '\n')
+		if (arry[in] == '\n')
 		{
-			buffe[in] = 0;
-			build_hist_list(info, buffe + las, lineCount++);
+			arry[in] = 0;
+			build_hist_list(info, arry + las, lineCount++);
 			las = in + 1;
 		}
 	if (las != in)
-		build_hist_list(info, buffe + las, lineCount++);
-	free(buffe);
+		build_hist_list(info, arry + las, lineCount++);
+	free(arry);
 	info->histcount = lineCount;
 	while (info->histcount-- >= HIST_MAX)
 		delete_node_at_index(&(info->history), 0);
@@ -105,7 +106,7 @@ int read_hist(info_t *info)
 /**
  * build_hist_list - Appends an entry to a history linked list
  * @info: Structure that may have arguments for maintainance
- * @buf: buffer
+ * @buf: arryr
  * @linecount: the history line count and histcount
  *
  * Return: Always 0
