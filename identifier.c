@@ -77,11 +77,11 @@ void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
  */
 int restore_alias(info_t *info)
 {
-	int in;
+	int inside;
 	list_t *nodule;
 	char *ptr;
 
-	for (in = 0; in < 10; in++)
+	for (inside = 0; inside < 10; inside++)
 	{
 		nodule = node_starts_with(info->alias, info->argv[0], '=');
 		if (!nodule)

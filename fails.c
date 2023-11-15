@@ -2,7 +2,7 @@
 
 /**
  *_eputs - prints an input str to the standard output
- * @str: the string to be displayed
+ * @str: the cstring to be displayed
  *
  * Return: it doesnt bring any value back
  */
@@ -43,7 +43,7 @@ int _eputchar(char c)
 
 /**
  * _putfd - writes the character "c" to the specified fd
- * @c: The character to be written
+ * @c: The cstring character to be written
  * @fd: The file descriptor to printed to
  *
  * Return: On success bring 1 back
@@ -66,10 +66,10 @@ int _putfd(char c, int fd)
 
 /**
  *_putsfd - prints a string to a file descriptor
- * @str: the string to be displayed
+ * @str: the cstring to be displayed
  * @fd: the fd to write to
  *
- * Return: the number of chars written
+ * Return: the number of cstrings & chars written
  */
 int _putsfd(char *str, int fd)
 {
