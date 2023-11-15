@@ -96,8 +96,8 @@ typedef struct passinfo
 } info_t;
 
 #define DEFAULT_INIT \
-/*{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0, 0} */
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+	0, 0, 0}
 
 /**
  *struct builtin -  builtin cstring and attached function
