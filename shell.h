@@ -184,7 +184,7 @@ int _myalias(info_t *);
 
 /*toem_setline.c */
 ssize_t get_input(info_t *);
-int _getline(info_t *, char **, size_t *);
+int _setline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
 /* toem_setinfo.c */
