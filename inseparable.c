@@ -15,9 +15,8 @@ int _myhistory(info_t *info)
 /**
  * unset_alias - Assigns str alias to an alias var
  * @info: the parameter structure
- * @str: the string representing the alias
- *
- * Return: Always 0 on success, 1 on error code
+ * @str: the string representing the structure.
+ * Return: zero indicates success, while one signifies an error code.
  */
 int unset_alias(info_t *info, char *str)
 {
@@ -38,9 +37,8 @@ int unset_alias(info_t *info, char *str)
 /**
  * set_alias - Assigns an alias to str
  * @info: A parameter structure
- * @str: the string is representing the alias
- *
- * Return: Always 0 on success, 1 on error code
+ * @str: the string is representing the struct
+ * Return: zero indicates success, while one signifies an error code.
  */
 int set_alias(info_t *info, char *str)
 {
@@ -59,8 +57,7 @@ int set_alias(info_t *info, char *str)
 /**
  * print_alias - Displays the content of an alias str
  * @node: the alias node contains the str
- *
- * Return: Always 0 on success, 1 on error code
+ * Return: zero indicates success, while one signifies an error code.
  */
 int print_alias(list_t *node)
 {
