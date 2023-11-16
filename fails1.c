@@ -86,7 +86,7 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - converter function simila to itoa
+ * format_number - converter function simila to itoa
  * @num: value to be converted
  * @base: base for conversion
  * @flags: flags settings for the conversion
