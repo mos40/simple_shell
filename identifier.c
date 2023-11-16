@@ -36,9 +36,9 @@ int is_info_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * test_chain - find  whether we should continue chaining on last status
- * @info: the parameter struct
- * @buf: the character buf
+ * test_chain - find  whether we should continue chaining on final stat
+ * @info: the struct holding ptr
+ * @buf: arry of chars serving as a buf
  * @p: address of active position in buffer
  * @i: beginning of position in buf
  * @len: size of buffer
@@ -70,10 +70,9 @@ void test_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * restore_alias - substitutes an aliases in the tokenized string
- * @info: the parameter struct
- *
- * Return: 1 if substituted, 0 otherwise
+ * restore_alias - switches the aliases in the cstr
+ * @info: the ptr struct
+ * Return: 1 if substitution occurs, zero otherwise
  */
 int restore_alias(info_t *info)
 {
