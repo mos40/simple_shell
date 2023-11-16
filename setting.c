@@ -2,9 +2,9 @@
 
 /**
  * _myEnviron - prints the active environment
- * @info: Structure holding potential arguments. Used to maintain
- *          constant function prototype.
- * Return: Always 0
+ * @info: Structure holding potential arguments. Used to make
+ *          const prototype.
+ * Return: Always zeRo
  */
 int _myEnviron(info_t *info)
 {
@@ -76,8 +76,8 @@ int _myunsetEnviron(info_t *info)
 
 /**
  * populate_Enviro_list - fills an environment linked list
- * @info: Structure containing potential arguments, maintaining
- *          constant function prototype.
+ * @info: Structure containing potential arguments, taking care
+ *          const prototype.
  * Return: Always 0
  */
 int populate_Enviro_list(info_t *info)

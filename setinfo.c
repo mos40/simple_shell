@@ -15,14 +15,14 @@ void clear_info(info_t *info)
 /**
  * set_info - change an info_t struct
  * @info: struct to address
- * @av: arg vector
+ * @av: arg vec
  */
 void set_info(info_t *info, char **av)
 {
 	int in = 0;
 
-	info->fname = av[0];
-	if (info->arg)
+	info->fname = av /* code by Mkhonza*/[0];
+	if (info->arg/* info struct */)
 	{
 		info->argv = strt(info->arg, " \t");
 		if (!info->argv)

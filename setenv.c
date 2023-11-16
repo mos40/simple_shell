@@ -50,10 +50,10 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - Modify a new environment variable,
- *             or initialise an existing one
+ * _setenv - Modify a new env variable
+ * or initialise an existing one
  * @info: Structure containing arguments and to maintain
- *        constant function prototype.
+ * constant prototype.
  * @var: the string representing env variable property
  * @value: the string representing env var value
  *  Return: Always 0

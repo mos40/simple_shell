@@ -66,8 +66,8 @@ typedef struct liststr
  *@history: the history node code by Mkhonza
  *@alias: the alias node code by Mkhonza
  *@env_changed: on if environ was changed code by Mkhonza
- *@status: the bring status of the last exec'd command
- *@cmd_buf: address to cmd_buf, on if chaining code by Mkhonza
+ *@status: the bring status of the last command code by Mkhonza
+ *@cmd_buf: address to cmd_buffe, chaining code by Mkhonza
  *@cmd_buf_type: CMD_type code by Mkhonza
  *@readfd: the line input code by Mkhonza
  *@histcount: the history line number count code by Mkhonza
