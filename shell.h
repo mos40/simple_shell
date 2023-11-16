@@ -74,25 +74,25 @@ typedef struct liststr
  */
 typedef struct passinfo
 {
-	char *arg;
-	char **argv;
-	char *path;
-	int argc;
-	unsigned int line_count;
-	int err_num;
-	int linecount_flag;
-	char *fname;
-	list_t *env;
-	list_t *history;
-	list_t *alias;
-	char **environ;
-	int env_changed;
-	int status;
+	char *arg;/* Arg str */
+	char **argv; /* Array of arg strs */
+	char *path;/* Path cstring*/
+	int argc;/* Argument count */
+	unsigned int line_count;/*assuming it's related to file processing*/
+	int err_num;/* Error number"(for error handling"*/
+	int linecount_flag;/* Flag indicating if line counting is enabled */
+	char *fname;/* File name */
+	list_t *env;/* list for environment vars */
+	list_t *history;/* list for cmd hist*/
+	list_t *alias; /* Linked list for cmd aliases */
+	char **environ;/* Array of env vars */
+	int env_changed;/* Flag indicating if the env changed */
+	int status;/* Stat indicator*/
 
 	char **cmd_buf; /* ptr to cmd ; chain buf, code by Mkhonza */
 	int cmd_buf_type; /* CMD_type ||, &&, ;code by Mkhonza */
-	int readfd;
-	int histcount;
+	int readfd;/* filedescriptor */
+	int histcount; /* Var to store the count of cmd hist entries */
 } info_t;
 
 #define INFO_INIT \
@@ -173,12 +173,12 @@ int print_d(int, int);
 char *format_number(long int, int, int);
 void remove_comments(char *);
 
-/* toem_builtin.c */
+/* toem_intrinsic_builtin.c */
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
+/* toem_intrinsic_builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
