@@ -89,7 +89,7 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, code by Mkhonza */
+	char **cmd_buf; /* ptr to cmd ; chain buf, code by Mkhonza */
 	int cmd_buf_type; /* CMD_type ||, &&, ;code by Mkhonza */
 	int readfd;
 	int histcount;
